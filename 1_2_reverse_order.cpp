@@ -17,6 +17,6 @@ int main()
     cout << "Putting the array in reverse order\n";
 for (int i = 0; i < n; i++)
     {
-        cout << array[n - i];
+        cout << array[n - i -1] << "\n";
     }
 }
