@@ -11,7 +11,6 @@ int main()
     n = 7;
     vector<int> array(n);
     cout << "Input elements\n";
-    vector<int> array(n);
     array = {5, 4, 6, 7, 8, 12, 16}; //
     for (int i = 0; i < n; i++)
     {
