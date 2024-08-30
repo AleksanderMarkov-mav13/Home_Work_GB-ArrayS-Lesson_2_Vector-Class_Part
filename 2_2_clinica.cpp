@@ -22,9 +22,15 @@ int main()
             ages = add_patient(ages, age);
         } 
     } while (age != -1);
+    int sum = 0;
     cout << "\n";
-    for (int i = 1; i < ages.size(); ++i)
+    for (int i = 0; i < ages.size(); ++i)
     {
+        sum += ages [i];
         cout << ages[i] << " ";
     }
+    cout << "\n" << sum << " " << ages.size() << "\n";
+    float average = (float)sum / (ages.size() - 1);
+    cout << "There are " << ages.size() - 1 << " patients in the que. \n";
+    cout << "Their average age is " << average << " years";
 }
