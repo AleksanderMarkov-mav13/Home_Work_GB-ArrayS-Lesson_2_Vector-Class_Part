@@ -4,7 +4,17 @@ using namespace std;
 vector<int> erase_bot(vector<int> vec, vector<int> bot_sell, int val_less)
 {
     vector<int> newvec(vec.size() - val_less);
-    
+    int count_less = 0;
+    for (int i = 0; i < vec.size(); i++)
+    {
+        if (i == bot_sell [count_less]) {
+            count_less++;
+        }
+        else {
+            newvec[i - count_less] = vec[i];
+        }
+    }
+    return newvec;
 }
 int main()
 {
@@ -21,10 +31,15 @@ int main()
     cout << "How many bots are we going to cell?\n";
     cin >> val_less;
     vector <int> bot_sell(val_less);
+    cout << "Input the index of bot, that we are celling\n";
     for (int i = 0; i < val_less; ++i)
     {
-        cout << "Input the index of bot, that we are celling\n";
         cin >> bot_sell[i];
     }
-
+    bot_list = erase_bot(bot_list, bot_sell, val_less);
+    cout << "Now we have on our showcase next list of boots:\n";
+    for (int i = 0; i < bot_list.size (); i++)
+    {
+        cout << "№ " << i << "  S/N " << bot_list [i] << "\n";
+    }
 }
