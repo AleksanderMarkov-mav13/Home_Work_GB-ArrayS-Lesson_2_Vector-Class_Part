@@ -4,14 +4,14 @@ using namespace std;
 vector<int> erase_bot(vector<int> vec, vector<int> bot_sell, int val_less)
 {
     vector<int> newvec(vec.size() - val_less);
-    int count_less = 0;
+    int count_sell = 0;
     for (int i = 0; i < vec.size(); i++)
     {
-        if (i == bot_sell [count_less] -1) {
-            count_less++;
-        }
-        else {
-            newvec[i - count_less] = vec[i];
+        for (int j = 0; j < bot_sell.size(); j++){
+            if (i = bot_sell[j] - 1) count_sell++; 
+            else {
+                newvec[i - count_sell] = vec[i];
+            }
         }
     }
     return newvec;
@@ -29,7 +29,7 @@ int main()
     {
         cout << i + 1 << "  - ";
         cin >> bot_list[i];
-        cout << "\n";
+        // cout << "\n";
     }
     cout << "How many bots are we going to cell?\n";
     do {
