@@ -24,12 +24,18 @@ int main()
     int val_bot, val_less;
     cin >> val_bot;
     vector<int> bot_list(val_bot);
-    for (int i = 0; i < val_bot; ++i) {
-        cout << "Input serial number of bot № " << i<< " for showcase\n";
+    cout << "Input serial number of bot № \n";
+     for (int i = 0; i < val_bot; ++i)
+    {
+        cout << i << "  - ";
         cin >> bot_list[i];
+        cout << "\n";
     }
     cout << "How many bots are we going to cell?\n";
-    cin >> val_less;
+    do {
+        cin >> val_less;
+        if (val_less <= 0 || val_less > val_bot) cout << "Wrong input!\n";
+    } while (val_less <= 0 || val_less > val_bot);
     vector <int> bot_sell(val_less);
     cout << "Input the index of bot, that we are celling\n";
     for (int i = 0; i < val_less; ++i)
