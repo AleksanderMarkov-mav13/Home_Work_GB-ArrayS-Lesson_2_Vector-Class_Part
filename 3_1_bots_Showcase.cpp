@@ -8,9 +8,10 @@ vector<int> erase_bot(vector<int> vec, vector<int> bot_sell, int val_less)
     for (int i = 0; i < vec.size(); i++)
     {
         for (int j = 0; j < bot_sell.size(); j++){
-            if (i = bot_sell[j] - 1) count_sell++; 
+            if (i == bot_sell[j] - 1) count_sell++; 
             else {
                 newvec[i - count_sell] = vec[i];
+                break;
             }
         }
     }
