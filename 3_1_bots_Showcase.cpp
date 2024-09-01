@@ -7,7 +7,7 @@ vector<int> erase_bot(vector<int> vec, vector<int> bot_sell, int val_less)
     int count_less = 0;
     for (int i = 0; i < vec.size(); i++)
     {
-        if (i == bot_sell [count_less]) {
+        if (i == bot_sell [count_less] -1) {
             count_less++;
         }
         else {
@@ -27,7 +27,7 @@ int main()
     cout << "Input serial number of bot № \n";
      for (int i = 0; i < val_bot; ++i)
     {
-        cout << i << "  - ";
+        cout << i + 1 << "  - ";
         cin >> bot_list[i];
         cout << "\n";
     }
@@ -46,6 +46,6 @@ int main()
     cout << "Now we have on our showcase next list of boots:\n";
     for (int i = 0; i < bot_list.size (); i++)
     {
-        cout << "№ " << i << "  S/N " << bot_list [i] << "\n";
+        cout << "№ " << i + 1 << "  S/N " << bot_list [i] << "\n";
     }
 }
