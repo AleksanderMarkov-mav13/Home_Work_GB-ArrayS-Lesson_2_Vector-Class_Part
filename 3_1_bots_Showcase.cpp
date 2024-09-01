@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
-vector<int> erase_bot(vector<int> vec, vector<int> bot_sell, int val_less)
+vector<int> erase_bot(vector<int> vec, vector<int> bot_sell)
 {
-    vector<int> newvec(vec.size() - val_less);
+    vector<int> newvec(vec.size() - bot_sell.size());
     int count_less = 0;
     for (int i = 0; i < vec.size(); i++)
     {
@@ -31,7 +32,6 @@ int main()
     {
         cout << i + 1 << "  - ";
         cin >> bot_list[i];
-        cout << "\n";
     }
     cout << "How many bots are we going to cell?\n";
     do
@@ -46,7 +46,8 @@ int main()
     {
         cin >> bot_sell[i];
     }
-    bot_list = erase_bot(bot_list, bot_sell, val_less);
+    sort(bot_sell.begin(), bot_sell.end());
+    bot_list = erase_bot(bot_list, bot_sell);
     cout << "Now we have on our showcase next list of boots:\n";
     for (int i = 0; i < bot_list.size(); i++)
     {
